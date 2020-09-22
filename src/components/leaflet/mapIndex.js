@@ -36,7 +36,7 @@ class LeafletMap extends Component  {
           <React.Fragment>
           <Map center={position} zoom={this.state.zoom} maxZoom={this.state.maxZoom} minZoom={this.state.minZoom}>
             <TileLayer
-              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap Sagi</a> contributors'
+              attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap Custom by Keldath</a> contributors'
               url= {this.state.mapSource}
             />
            <Markers />
