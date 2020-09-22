@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Map, Marker, Popup, TileLayer } from 'react-leaflet';
-import 'leaflet/dist/leaflet.css';
-import base64 from 'react-native-base64';
+import { Map,TileLayer } from 'react-leaflet';
+//import 'leaflet/dist/leaflet.css';
+//import base64 from 'react-native-base64';
+import Markers from './markers';
 //const r  = require('./maps/zoom3/x0y0.png')
 /*
 type State = {
@@ -24,9 +25,11 @@ class LeafletMap extends Component  {
         lng: -0.09,
         zoom: 4,
         maxZoom:5 ,
-        minZoom: 3
+        minZoom: 3,
+        mapSource: '/maps/zoom{z}//x{x}y{y}.png'
       }
       
+
       render() {
        const position = [this.state.lat, this.state.lng]
         return (
@@ -34,16 +37,20 @@ class LeafletMap extends Component  {
           <Map center={position} zoom={this.state.zoom} maxZoom={this.state.maxZoom} minZoom={this.state.minZoom}>
             <TileLayer
               attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap Sagi</a> contributors'
-              url=  '/maps/zoom{z}//x{x}y{y}.png'/*"{require('src/components/leaflet/maps/maps/zoom{z}/x{x}y{y}.png')}"*/
+              url= {this.state.mapSource}
             />
+           <Markers />
           </Map>
-         
+          
           </React.Fragment>
         )
       }
 }
 
 export default LeafletMap;
+
+
+//test code
 //../../asssets/maps/zoom3
 //https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png
 //center={position}
@@ -58,4 +65,6 @@ export default LeafletMap;
            <p>{this.cn('maps/zoom{z}/x{x}y{y}.png')}</p>
            {r.replace('/zoom3/x0y0.png', '/zoom{z}/x{x}y{y}.png')}
             {'/maps/zoom{z}/' + 'data:image/png;base64,' + base64.encode('/x{x}y{y}.png')}
+            "{require('src/components/leaflet/maps/maps/zoom{z}/x{x}y{y}.png')}"
+            
 */
